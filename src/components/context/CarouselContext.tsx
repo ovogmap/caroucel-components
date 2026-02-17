@@ -1,5 +1,12 @@
 import { createContext, useContext } from "react";
-import type { CarouselContext } from "../carousel/Provider";
+
+export interface CarouselContext {
+  itemCount: number;
+  width: number;
+  height: number;
+  focusedIndex: number;
+  setFocusedIndex: (index: number) => void;
+}
 
 export const carouselContext = createContext<CarouselContext | null>(null);
 

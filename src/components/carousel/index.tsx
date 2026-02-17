@@ -2,16 +2,16 @@ import CarouselRoot from "./CarouselRoot";
 import CarouselContent from "./CarouselContent";
 import CarouselItem from "./CarouselItem";
 import CarouselController from "./CarouselController";
-import CaroucelPrevButton from "./CaroucelPrevButton";
-import CaroucelNextButton from "./CaroucelNextButton";
-import CaroucelIndicators from "./CaroucelIndicators";
+import CarouselPrevButton from "./CarouselPrevButton";
+import CarouselNextButton from "./CarouselNextButton";
+import CarouselIndicators from "./CarouselIndicators";
 
 export {
   CarouselRoot,
   CarouselContent,
   CarouselItem,
   CarouselController,
-  CaroucelPrevButton,
-  CaroucelNextButton,
-  CaroucelIndicators,
+  CarouselPrevButton,
+  CarouselNextButton,
+  CarouselIndicators,
 };
