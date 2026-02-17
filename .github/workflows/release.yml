@@ -1,0 +1,34 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master # 혹은 master
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm" # pnpm이나 yarn 사용 시 변경 가능
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # 버전을 올리고 배포하는 핵심 액션
+          publish: npm run release # package.json에 정의된 배포 스크립트
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

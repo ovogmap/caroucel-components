@@ -43,9 +43,6 @@ const CaroucelInnerWrapper = styled.div<{
   display: flex;
   flex-direction: row;
   gap: ${(props) => props.$gap}px;
-  position: absolute;
-  top: 0;
-  left: 0;
   transform: translateX(${(props) => -props.$left}px);
   transition: transform 0.3s ease-in-out;
 `;
