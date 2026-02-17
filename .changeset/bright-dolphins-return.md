@@ -1,5 +1,0 @@
----
-"carousel": patch
----
-
-remove text
