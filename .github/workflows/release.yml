@@ -14,11 +14,16 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
+      # 1. pnpm 설치 단계 추가 (반드시 setup-node 보다 먼저!)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10.29.3 # 사용 중인 pnpm 버전에 맞게 수정 가능
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: "pnpm" # pnpm이나 yarn 사용 시 변경 가능
 
       - name: Install Dependencies
@@ -29,6 +34,6 @@ jobs:
         uses: changesets/action@v1
         with:
           # 버전을 올리고 배포하는 핵심 액션
-          publish: npm run release # package.json에 정의된 배포 스크립트
+          publish: pnpm run release # package.json에 정의된 배포 스크립트
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
