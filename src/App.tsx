@@ -15,7 +15,7 @@ function App() {
     <>
       <div>
         <h2>Carousel Components 만들어 보기...</h2>
-        <h2>npm publish 해보기...</h2>
+        <h2>changeset 2트</h2>
         <CarouselRoot width={500} height={500} itemCount={items.length}>
           <CarouselContent>
             {items.map((item, index) => (
