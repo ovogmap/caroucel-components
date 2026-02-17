@@ -1,22 +1,22 @@
 import styled from "styled-components";
 import { useCarousel } from "../context/CarouselContext";
 
-export default function CaroucelIndicators() {
+export default function CarouselIndicators() {
   const { itemCount, focusedIndex, setFocusedIndex } = useCarousel();
   return (
-    <CaroucelIndicatorsWrapper>
+    <CarouselIndicatorsWrapper>
       {Array.from({ length: itemCount }).map((_, index) => (
-        <CaroucelIndicatorItem
+        <CarouselIndicatorItem
           key={index}
           $isFocused={focusedIndex === index}
           onClick={() => setFocusedIndex(index)}
         />
       ))}
-    </CaroucelIndicatorsWrapper>
+    </CarouselIndicatorsWrapper>
   );
 }
 
-const CaroucelIndicatorsWrapper = styled.div`
+const CarouselIndicatorsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -24,7 +24,7 @@ const CaroucelIndicatorsWrapper = styled.div`
   align-items: center;
 `;
 
-const CaroucelIndicatorItem = styled.div<{
+const CarouselIndicatorItem = styled.div<{
   $isFocused: boolean;
 }>`
   width: 10px;

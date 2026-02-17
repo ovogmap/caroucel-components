@@ -17,26 +17,25 @@ export default function CarouselContent({
   }, [focusedIndex, width, gap]);
 
   return (
-    <CaroucelContentWrapper $width={width} $height={height}>
-      <CaroucelInnerWrapper $left={left} $gap={gap}>
+    <CarouselContentWrapper $width={width} $height={height}>
+      <CarouselInnerWrapper $left={left} $gap={gap}>
         {children}
-      </CaroucelInnerWrapper>
-    </CaroucelContentWrapper>
+      </CarouselInnerWrapper>
+    </CarouselContentWrapper>
   );
 }
 
-const CaroucelContentWrapper = styled.div<{
+const CarouselContentWrapper = styled.div<{
   $width: number;
   $height: number;
 }>`
   width: ${(props) => props.$width}px;
   height: ${(props) => props.$height}px;
-  background-color: #fff;
   overflow: hidden;
   background-color: transparent;
 `;
 
-const CaroucelInnerWrapper = styled.div<{
+const CarouselInnerWrapper = styled.div<{
   $left: number;
   $gap: number;
 }>`

@@ -4,9 +4,9 @@ import {
   CarouselContent,
   CarouselItem,
   CarouselController,
-  CaroucelPrevButton,
-  CaroucelNextButton,
-  CaroucelIndicators,
+  CarouselPrevButton,
+  CarouselNextButton,
+  CarouselIndicators,
 } from "./components/carousel";
 import styled from "styled-components";
 
@@ -31,9 +31,9 @@ function App() {
             ))}
           </CarouselContent>
           <CarouselController>
-            <CaroucelPrevButton />
-            <CaroucelIndicators />
-            <CaroucelNextButton />
+            <CarouselPrevButton />
+            <CarouselIndicators />
+            <CarouselNextButton />
           </CarouselController>
         </CarouselRoot>
       </div>

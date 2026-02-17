@@ -2,7 +2,7 @@ import { ChevronRightIcon } from "@radix-ui/react-icons";
 import styled from "styled-components";
 import { useCarousel } from "../context/CarouselContext";
 
-export default function CaroucelNextButton() {
+export default function CarouselNextButton() {
   const { focusedIndex, setFocusedIndex, itemCount } = useCarousel();
   const handleClick = () => {
     if (focusedIndex < itemCount - 1) {
@@ -10,16 +10,16 @@ export default function CaroucelNextButton() {
     }
   };
   return (
-    <CaroucelNextButtonWrapper
+    <CarouselNextButtonWrapper
       onClick={handleClick}
       disabled={focusedIndex === itemCount - 1}
     >
       <ChevronRightIcon width={16} height={16} />
-    </CaroucelNextButtonWrapper>
+    </CarouselNextButtonWrapper>
   );
 }
 
-const CaroucelNextButtonWrapper = styled.button`
+const CarouselNextButtonWrapper = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
